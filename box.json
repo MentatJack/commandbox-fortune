@@ -1,8 +1,8 @@
 {
     "name":"CommandBox Fortune",
-    "version":"0.0.0",
+    "version":"0.1.0",
     "author":"Steven Klotz",
-    "location":"https://github.com/MentatJack/commandbox-fortune",
+    "location":"MentatJack/commandbox-fortune#v0.1.0",
     "homepage":"",
     "documentation":"https://github.com/MentatJack/commandbox-fortune",
     "repository":{
@@ -29,7 +29,11 @@
     "dependencies":{},
     "devDependencies":{},
     "installPaths":{},
-    "scripts":{},
+    "scripts":{
+        "postVersion":"package set location='MentatJack/commandbox-fortune#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    },
     "ignore":[
         "**/.*",
         "test",
