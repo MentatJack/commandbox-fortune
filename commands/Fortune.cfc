@@ -3,12 +3,19 @@
  **/
 component {
 
-	function run(){
+	public void function run(){
 		if (!isDefined("variables.quotes")){
-			variables.quotes = fileRead( '/system/Quotes.txt' ).listToArray( chr( 13 ) & chr( 10 ) ); 
+			/*
+				Brad suggests one of these instead of /system/
+				/commandbox
+				/commandbox-home
+
+				but I can't seem to make that work...
+			*/
+			variables.quotes = fileRead( '/system/Quotes.txt' ).listToArray( chr( 13 ) & chr( 10 ) );
 		}
 		var quote = variables.quotes[ randRange( 1, quotes.len() ) ];
 
-		return quote;
+		print.line( quote );
 	}
 }
